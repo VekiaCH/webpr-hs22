@@ -46,7 +46,20 @@ const doFun2 = doit2(fun1);
 funArray.push( (doFun2(10) === 1).toString() )
 funArray.push( (doFun2() === 1).toString() )
 
+function one(x) {
+    return x;
+}
+
+function two(x, y) {
+    return x + y;
+}
+
+function three(x, y, z){
+    return x + y + z;
+}
+
 funArray.forEach((e, i) => {
     document.writeln(i + ": ");
     document.writeln(e + '<br/>');
 });
+
