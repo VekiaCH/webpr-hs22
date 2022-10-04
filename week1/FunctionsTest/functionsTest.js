@@ -1,62 +1,36 @@
 const funArray = [];
 
-funArray.push("true");
-funArray.push( (1===1).toString() )
+const T = x => y => x;
+const F = x => y => y;
+// WEEK 3
+funArray.push("WEEK 3");
 
-function fun1() { return 1; }
+/* const pair = a => b => f => f(a)(b);
+const fst = p => p(T);
+const snd = p => p(F);
 
-funArray.push( (fun1() === 1).toString() );
-funArray.push( (fun1(42) === 1).toString() );
+const pairEq = a => b => fst(a) === fst(b) && snd(a) === snd(b);
+const pairPlus = a => b => pair (fst(a) + fst(b)) (snd(a) + snd(b));
+const pairMap = f => p => pair (f(fst(p))) (f(snd(p)));
 
-function fun2() { return 1; }
-function fun2(arg) { return arg; }
 
-funArray.push( (fun2() !== 1).toString() );
-funArray.push( (fun2() === undefined).toString() );
-funArray.push( (fun2(42) === 42).toString() );
-funArray.push( (fun2(1) === 1).toString() )
+const oneTwo = pair(1)(2);
+const sum = pairPlus(oneTwo)(oneTwo);
+const square = x => x * x;
+const result = pairMap(square) (oneTwo); */
 
-function noReturn() { 1; }
-const noReturn2 = () => { 1; }
-const noReturn3 = () => 1;
+//fst(oneTwo) = 0;
+const s1 = x => y => z => x;
+const s2 = x => y => z => y;
+const s3 = x => y => z => z;
 
-funArray.push( (noReturn() !== 1).toString() );
-funArray.push( (noReturn2() !== 1).toString() );
-funArray.push( (noReturn3() === 1).toString() );
+const triple = x => y => z => f => f(x)(y)(z);
+const a = t => t(s1);
+const b = t => t(s2);
+const c = t => t(s3);
 
-const myfun = fun1;
-const funs = [null, undefined, fun1, fun2];
-
-funArray.push( (myfun() === 1).toString() );
-funArray.push( (funs[2]() === 1).toString() );
-
-function doit(whatToDo) {
-    return function bla(arg) { return whatToDo(arg); }
-}
-
-funArray.push( (doit(fun1)(10) === 1).toString() )
-funArray.push( (doit(fun2)(10) === 10).toString() )
-
-const doit2 = callme => arg => callme(arg);
-
-funArray.push( (doit2(fun1)(10) === 1).toString() )
-
-const doFun2 = doit2(fun1);
-
-funArray.push( (doFun2(10) === 1).toString() )
-funArray.push( (doFun2() === 1).toString() )
-
-function one(x) {
-    return x;
-}
-
-function two(x, y) {
-    return x + y;
-}
-
-function three(x, y, z){
-    return x + y + z;
-}
+const oneTwoThree = triple(1);
+funArray.push((a(oneTwoThree) === 1).toString());
 
 funArray.forEach((e, i) => {
     document.writeln(i + ": ");
