@@ -55,7 +55,7 @@ funArray.push(eShow(safeDiv(1)(0)) === "Cannot divide by 0" && eShow(safeDiv(x_)
 */
 
 //Week 4
-funArray.push("Week 4");
+/*funArray.push("Week 4");
 
 
 const twice = x => x * 2;
@@ -68,7 +68,24 @@ funArray.push([1,2,3,4,5,6].filter(divides(3)).toString() === "3,6");
 
 const join = z => (x,y) => x+z+y;
 
-funArray.push([1,2,3].reduce(join('-')));
+funArray.push([1,2,3].reduce(join('-')));*/
+
+//Week 5
+funArray.push("Week 5")
+const e = {revenue: 10000, bonus: null};
+const factor_ = 0.2;
+/*const bonusFormula = "employee.bonus = employee.revenue * 0.2";
+
+const bonusCalculation = employee => eval(bonusFormula);
+
+bonusCalculation(e);
+funArray.push(e.bonus === e.revenue * 0.2);*/
+const bonusFormula = "employee.revenue * "+factor_;
+
+const bonusCalculation = Function("employee", "employee.bonus ="+bonusFormula);
+
+bonusCalculation(e);
+funArray.push(e.bonus === e.revenue * factor_);
 
 funArray.forEach((e, i) => {
     document.writeln(i + ": ");
