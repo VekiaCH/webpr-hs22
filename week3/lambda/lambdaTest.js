@@ -42,8 +42,8 @@ ok.push( or(T)(T) === T );
 // // Pair
 //
 const dierk = Pair("Dierk")("König"); // immutable
-ok.push( dierk(firstname) === "Dierk");
-ok.push( dierk(lastname)  === "König");
+ok.push( dierk(fst) === "Dierk");
+ok.push( dierk(snd)  === "König");
 //
 // const tdierk = Triple("Dierk")("König")(50); // immutable
 // ok.push( tdierk(tfirstname) === "Dierk");
@@ -73,7 +73,7 @@ const safeDiv = num => divisor =>
     ? Left("schlecht!")
     : Right(num / divisor);
 
-id( safeDiv(1)(0)  )
+either ( safeDiv(1)(0) )
       ( x => console.error(x))
       ( x => console.log(x));
 
@@ -99,7 +99,7 @@ id( safeDiv(1)(0)  )
 
 
 // test result report
-if ( ok.every(id) ) {
+if ( ok.every( id ) ) {
     document.writeln("All "+ ok.length +" tests ok.");
 } else {
     document.writeln("Not all tests ok! Details:");
