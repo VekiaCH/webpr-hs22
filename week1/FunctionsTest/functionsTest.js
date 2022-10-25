@@ -57,6 +57,7 @@ funArray.push(eShow(safeDiv(1)(0)) === "Cannot divide by 0" && eShow(safeDiv(x_)
 //Week 4
 funArray.push("Week 4");
 
+
 const twice = x => x * 2;
 
 funArray.push([1,2,3].map(twice).toString() === "2,4,6");
